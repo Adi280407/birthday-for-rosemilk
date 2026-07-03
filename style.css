@@ -26,15 +26,11 @@ body {
     position: fixed;
     inset: 0;
 
-    background:
-        linear-gradient(
-            180deg,
-            #ff85b5 0%,
-            #ff9fc7 20%,
-            #ffb8d8 45%,
-            #ffd1e8 70%,
-            #fff0f7 100%
-        );
+   background:
+        url("flower.png")
+        center center / cover
+        no-repeat
+        fixed;
 }
 /* ==========================================
    FLOATING PARTICLES
