@@ -1,0 +1,501 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Manrope", sans-serif;
+    background: #FFF8F6;
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+#background{
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff85b5 0%,
+            #ff9fc7 20%,
+            #ffb8d8 45%,
+            #ffd1e8 70%,
+            #fff0f7 100%
+        );
+}
+/* ==========================================
+   FLOATING PARTICLES
+========================================== */
+
+#particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+}
+
+.particle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    opacity: .45;
+
+}
+
+/* ==========================================
+   SCENE SYSTEM
+========================================== */
+
+#sceneContainer {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    position: relative;
+
+}
+
+.scene {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+.scene.active {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content {
+
+    width: 90%;
+
+    max-width: 850px;
+
+    text-align: center;
+
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+.subtitle {
+
+    font-size: 1.2rem;
+
+    color: #9C6C87;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+    opacity: 0;
+
+}
+
+.title {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 6rem;
+
+    color: #52394F;
+
+    line-height: 1.1;
+
+    opacity: 0;
+
+}
+
+.message {
+
+    margin-top: 25px;
+
+    color: #8E657A;
+
+    font-size: 1.3rem;
+
+    opacity: 0;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+#startButton {
+
+    margin-top: 60px;
+
+    padding: 18px 42px;
+
+    border: none;
+
+    border-radius: 60px;
+
+    background: white;
+
+    color: #52394F;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .35s;
+
+    box-shadow:
+
+        0 20px 45px rgba(255, 174, 203, .25);
+
+}
+
+#startButton:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+
+        0 25px 60px rgba(255, 174, 203, .45);
+
+}
+
+/* ==========================================
+   GLOW
+========================================== */
+
+.glow {
+
+    animation: glow 2s infinite;
+
+}
+
+@keyframes glow {
+
+    0% {
+
+        box-shadow:
+
+            0 0 15px rgba(255, 174, 203, .25);
+
+    }
+
+    50% {
+
+        box-shadow:
+
+            0 0 45px rgba(255, 174, 203, .6);
+
+    }
+
+    100% {
+
+        box-shadow:
+
+            0 0 15px rgba(255, 174, 203, .25);
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+    .title{
+
+        font-size:4rem;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .title{
+
+        font-size:2.8rem;
+
+    }
+
+    .subtitle{
+
+        font-size:1rem;
+
+    }
+
+    .message{
+
+        font-size:1rem;
+
+    }
+
+    #startButton {
+
+    margin-top: 60px;
+
+    padding: 18px 42px;
+
+    border: none;
+
+    border-radius: 60px;
+
+    background: white;
+
+    color: #52394F;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .35s;
+
+    box-shadow: 0 20px 45px rgba(255,174,203,.25);
+
+    opacity: 0;          /* ADD THIS */
+}
+
+}
+/* ==========================================
+   MEMORY SCENE
+========================================== */
+
+#scene2{
+
+    background:transparent;
+
+}
+
+.memory-card{
+
+    width:420px;
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    box-shadow:0 35px 80px rgba(0,0,0,.18);
+
+    transform:rotate(-4deg);
+
+    opacity:0;
+
+}
+
+.memory-card img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:5px;
+
+}
+
+.caption{
+
+    padding-top:15px;
+
+}
+
+.caption p{
+
+    font-family:"Shadows Into Light",cursive;
+
+    font-size:1.6rem;
+
+    color:#555;
+
+    text-align:center;
+
+}
+/* ===========================
+   SCENE 3 LETTER
+=========================== */
+
+#scene3{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+#letterCard{
+
+    width:75vw;
+    max-width:850px;
+
+    min-height:550px;
+
+    background:#FFF7EE;
+
+    border-radius:25px;
+
+    padding:60px;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.15);
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+}
+
+#letterCard h1{
+
+    text-align:center;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:55px;
+
+    color:#C34C84;
+
+    margin-bottom:40px;
+
+}
+
+#typingText{
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    color:#49382E;
+
+    white-space:pre-wrap;
+
+}
+/* ==========================
+   FINAL SCENE
+========================== */
+
+#scene4{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.final-card{
+
+    width:75vw;
+    max-width:850px;
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.final-card h1{
+
+    color:#C04C80;
+
+    font-size:50px;
+
+    margin-bottom:30px;
+
+}
+
+.final-card p{
+
+    color:#5A4250;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+}
+
+#replayBtn{
+
+    margin-top:40px;
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#C04C80;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+#replayBtn:hover{
+
+    transform:scale(1.05);
+
+}
+#letterCard{
+
+    max-height:80vh;
+
+    overflow-y:auto;
+
+}
